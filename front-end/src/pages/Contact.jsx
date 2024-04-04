@@ -5,6 +5,7 @@ const Contact = () => {
    <section>
     <div className="px-4 mx-auto max-w-screen-md">
       <h2 className='heading text-center'>Contact Us</h2>
+ 
     
       <form action='#' className='space-y-8'>
         <div>
