@@ -7,6 +7,7 @@ import HashLoader from "react-spinners/HashLoader";
 
 const Profile = ({ userData }) => {
   const [selectedFile, setSelectFile] = useState(null);
+  console.log("🚀 ~ Profile ~ selectedFile:", selectedFile)
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
