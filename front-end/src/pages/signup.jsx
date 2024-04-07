@@ -93,7 +93,7 @@ const Signup = () => {
                   value={formData.email}
                   onChange={handleInputChange}
                   className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none
-                        focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor
+                        focus:border-b-primaryColor text-[16px] leading-7 text-headingColor 
                         placeholder:text-textColor cursor-pointer"
                   required
                 />
@@ -106,7 +106,7 @@ const Signup = () => {
                   value={formData.password}
                   onChange={handleInputChange}
                   className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none
-                        focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor
+                        focus:border-b-primaryColor text-[16px] leading-7 text-headingColor 
                         placeholder:text-textColor cursor-pointer"
                   required
                 />
