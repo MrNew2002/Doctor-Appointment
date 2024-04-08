@@ -80,7 +80,7 @@ const DoctorDetail = () => {
                 <button
                   onClick={() => setTab("about")}
                   className={` ${
-                    tab === "about" &&
+                    tab == "about" &&
                     "border-b border-solid border-primaryColor"
                   }py-2 px-5 mr-5 text-[16px] leading-7
              text-headingColor font-semibold`}
@@ -100,7 +100,7 @@ const DoctorDetail = () => {
               </div>
 
               <div className="mt-[50px] ">
-                {tab === "about" && (
+                {tab == "about" && (
                   <DoctorAbout
                     name={name}
                     about={about}
@@ -108,11 +108,17 @@ const DoctorDetail = () => {
                     experiences={experiences}
                   />
                 )}
-                {tab === "feedback" && <Feedback reviews={reviews} totalRating={totalRating} />}
+                {tab == "feedback" && (
+                  <Feedback reviews={reviews} totalRating={totalRating} />
+                )}
               </div>
             </div>
             <div>
-              <SidePanel />
+              <SidePanel
+                doctorId={doctor._id}
+                ticketPrice={ticketPrice}
+                timeSlots={timeSlots}
+              />
             </div>
           </div>
         )}

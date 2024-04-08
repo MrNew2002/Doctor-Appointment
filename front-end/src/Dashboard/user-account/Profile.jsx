@@ -59,7 +59,7 @@ const Profile = ({ userData }) => {
       }
       setLoading(false);
       toast.success(message);
-      navigate("/users/profile/me");
+      navigate("/users/profile/me",);
     } catch (error) {
       toast.error(error.message);
       setLoading(false);
