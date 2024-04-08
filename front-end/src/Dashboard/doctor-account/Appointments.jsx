@@ -2,7 +2,6 @@ import { formateDate } from "../../utils/formatdate";
 
 /* eslint-disable react/prop-types */
 const Appointments = ({ appointments }) => {
-  console.log("🚀 ~ Appointments ~ appointments:", appointments)
   return (
     <table className="w-full text-left text-sm text-gray-500">
       <thead className="text-xs text-gray-700 uppercase bg-gray-50">
@@ -32,18 +31,20 @@ const Appointments = ({ appointments }) => {
               className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap"
             >
               <img
-                src={item.user.photo}
+                src={item?.user?.photo}
                 className="w-10 h-10 rounded-full"
                 alt=""
               />
               <div className="pl-3">
-                <div className="text-base font-semibold">{item.user.name}</div>
+                <div className="text-base font-semibold">
+                  {item?.user?.name}
+                </div>
                 <div className="text-normal text-gray-500">
-                  {item.user.email}
+                  {item?.user?.email}
                 </div>
               </div>
             </th>
-            <td className="px-6 py-4">{item.user.gender}</td>
+            <td className="px-6 py-4">{item?.user?.gender}</td>
             <td className="px-6 py-4">
               {item.isPaid && (
                 <div className="flex items-center">
@@ -59,7 +60,7 @@ const Appointments = ({ appointments }) => {
               )}
             </td>
             <td className="px-6 py-4">{item.ticketPrice}</td>
-            <td className="px-6 py-4">{formateDate(item.createAt)}</td>
+            <td className="px-6 py-4">{formateDate(item.createdAt)}</td>
           </tr>
         ))}
       </tbody>

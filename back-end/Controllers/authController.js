@@ -13,7 +13,6 @@ const generateToken = (user) => {
 };
 export const register = async (req, res) => {
   const { email, password, name, role, photo, gender } = req.body;
-  console.log("🚀 ~ register ~ req.body:", req.body);
   try {
     let user = null;
     if (role === "patient") {

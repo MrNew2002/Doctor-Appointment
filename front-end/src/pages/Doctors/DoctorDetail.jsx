@@ -9,6 +9,8 @@ import useFetchData from "../../hooks/useFetchData";
 import Loader from "../../compoments/Loader/Loading.jsx";
 import Error from "../../compoments/Error/Error.jsx";
 import { useParams } from "react-router-dom";
+import convertTime from "../../utils/convertTime.js";
+import moment from "moment";
 const DoctorDetail = () => {
   const [tab, setTab] = useState("about");
   const { id } = useParams();
@@ -31,6 +33,17 @@ const DoctorDetail = () => {
     ticketPrice,
     photo,
   } = doctor;
+  const [formData, setFormData] = useState({
+    date: "",
+    time: {
+      day: "",
+      startingTime: "00:00",
+      endingTime: "00:00",
+    },
+  });
+  const handleInputOnChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
   return (
     <section>
       <div className="max-w-[1170px] px-5 mx-auto">
@@ -47,7 +60,7 @@ const DoctorDetail = () => {
                 <div>
                   <span
                     className="bg-[#CCF0F3] text-irisBlueColor py-1 lg:py-2 lg:px-6 text-[12px]
-              leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded"
+                    leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded"
                   >
                     {specialization}
                   </span>
@@ -57,14 +70,14 @@ const DoctorDetail = () => {
                   <div className="flex items-center gap-[6px]">
                     <span
                       className="flex items-center gap-[6px] text-[14px] leading-5 lg:text-[16px]
-                lg:leading-7 font-semibold text-headingColor"
+                        lg:leading-7 font-semibold text-headingColor"
                     >
                       <img src={starIcon} alt="" />
                       {averageRating}
                     </span>
                     <span
                       className="text-[14px] leading-5 lg:text-[16px]
-                lg:leading-7 font-semibold text-textColor"
+                        lg:leading-7 font-semibold text-textColor"
                     >
                       ({totalRating})
                     </span>
@@ -74,6 +87,46 @@ const DoctorDetail = () => {
                     {bio}
                   </p>
                 </div>
+              </div>
+              <div>
+                <div className="pt-5 w-[200px]">
+                  <p className="form__label">Date:</p>
+                  <input
+                    type="date"
+                    name="date"
+                    value={formData.date}
+                    className="form__input"
+                    onChange={(e) => handleInputOnChange(e)}
+                  />
+                </div>
+                {formData.date != "" && (
+                  <>
+                    <p className="form__label">Time:</p>
+                    <div className="flex items-center gap-5">
+                      {timeSlots
+                        ?.filter((item) => {
+                          const dayOfWeek = moment(formData.date)
+                            .format("dddd")
+                            .toLowerCase();
+                          return item.day === dayOfWeek;
+                        })
+                        ?.map((item, index) => (
+                          <span
+                            key={index}
+                            name="timeSlots"
+                            onClick={() =>
+                              setFormData({ ...formData, time: item })
+                            }
+                            className="bg-[#CCF0F3] text-irisBlueColor py-1 lg:py-2 lg:px-6 text-[12px]
+                            leading-4 lg:text-[16px] lg:leading-7 font-semibold rounded cursor-pointer"
+                          >
+                            {convertTime(item.startingTime)} -
+                            {convertTime(item.endingTime)}
+                          </span>
+                        ))}
+                    </div>
+                  </>
+                )}
               </div>
 
               <div className="mt-[50px] border-b border-solid border-[#0066ff34]">
@@ -117,7 +170,7 @@ const DoctorDetail = () => {
               <SidePanel
                 doctorId={doctor._id}
                 ticketPrice={ticketPrice}
-                timeSlots={timeSlots}
+                timeSlots={formData}
               />
             </div>
           </div>

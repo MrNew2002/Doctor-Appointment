@@ -96,8 +96,9 @@ export const getMyAppointments = async (req, res) => {
     const bookings = await Booking.find({ user: req.userId });
 
     const doctorIds = bookings.map((el) => el.doctor.id);
+    
 
-    const doctors = await Doctor.find({ id: { $in: doctorIds } }).select(
+    const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select(
       "-password"
     );
     res.status(200).json({

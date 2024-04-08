@@ -14,7 +14,6 @@ const Dashboard = () => {
     `${BASE_URL}/doctors/profile/me`
   );
   const [tab, setTab] = useState("overview");
-  console.log("🚀 ~ Dashboard ~ data:", data);
   return (
     <section>
       <div className="max-w-[1170px] px-5 mx-auto ">

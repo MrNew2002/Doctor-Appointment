@@ -1,23 +1,25 @@
+/* eslint-disable react/prop-types */
 import convertTime from "../../utils/convertTime";
 import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
+import moment from "moment";
 const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
+  console.log("🚀 ~ SidePanel ~ timeSlots:", JSON.stringify(timeSlots));
   const bookingHandler = async () => {
     try {
-      const res = await fetch(
-        `${BASE_URL}/bookings/checkout-session/${doctorId}`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const res = await fetch(`${BASE_URL}/bookings/checkout/${doctorId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(timeSlots),
+      });
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.message + "." + "Please try again");
       }
-      toast.success('Booking successful');
+      toast.success("Booking successful");
     } catch (error) {
       toast.error(error.message);
     }
@@ -33,21 +35,25 @@ const SidePanel = ({ doctorId, ticketPrice, timeSlots }) => {
 
       <div className="mt-[30px]">
         <p className="text__para mt-0 font-semibold text-headingColor">
-          Available Time Slots:
+          Time Slots:
         </p>
-
-        <ul className="mt-3">
-          {timeSlots?.map((item, index) => (
-            <li key={index} className="flex items-center justify-between mb-2">
+        {timeSlots.time.day != "" && (
+          <ul className="mt-3">
+            <li className="flex items-center justify-between mb-2">
               <p className="text-[15px] leading-6 text-textColor font-semibold">
-                {item.day.charAt(0).toUpperCase() + item.day.slice(1)}
+                {timeSlots.time.day.charAt(0).toUpperCase() +
+                  timeSlots.time.day.slice(1)}
               </p>
               <p className="text-[15px] leading-6 text-textColor font-semibold">
-                {convertTime(item.startingTime)} -{convertTime(item.endingTime)}
+                {moment(timeSlots.date).format("DD/MM/YYYY")}
+              </p>
+              <p className="text-[15px] leading-6 text-textColor font-semibold">
+                {convertTime(timeSlots.time.startingTime)} -
+                {convertTime(timeSlots.time.endingTime)}
               </p>
             </li>
-          ))}
-        </ul>
+          </ul>
+        )}
       </div>
 
       <button onClick={bookingHandler} className="btn px-2 w-full rounded-md">

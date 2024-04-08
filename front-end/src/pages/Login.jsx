@@ -40,7 +40,7 @@ const Login = () => {
           role: result.role,
         },
       });
-      console.log(result, "login data");
+      
 
       setLoading(false);
       toast.success(result.message);

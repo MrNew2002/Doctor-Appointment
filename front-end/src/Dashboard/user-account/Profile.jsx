@@ -7,12 +7,10 @@ import HashLoader from "react-spinners/HashLoader";
 
 const Profile = ({ userData }) => {
   const [selectedFile, setSelectFile] = useState(null);
-  console.log("🚀 ~ Profile ~ selectedFile:", selectedFile)
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    password: "",
     photo: null,
     gender: "",
     bloodType: "",
@@ -59,7 +57,7 @@ const Profile = ({ userData }) => {
       }
       setLoading(false);
       toast.success(message);
-      navigate("/users/profile/me",);
+      navigate("/users/profile/me");
     } catch (error) {
       toast.error(error.message);
       setLoading(false);
@@ -93,18 +91,6 @@ const Profile = ({ userData }) => {
                cursor-pointer"
             aria-readonly
             readOnly
-          />
-        </div>
-        <div className="mb-5">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={formData.password}
-            onChange={handleInputChange}
-            className="w-full py-3 border-b border-solid border-[#0066ff61] focus:outline-none
-              focus:border-b-primaryColor text-[16px] leading-7 text-headingColor placeholder:text-textColor
-               cursor-pointer"
           />
         </div>
         <div className="mb-5">
@@ -164,7 +150,7 @@ const Profile = ({ userData }) => {
                       items-center px-[0.75rem] py-[0.375rem] text-[15px] leading-6 overflow-hidden 
                       bg-[#0066ff46] text-headingColor font-semibold rounded-lg truncate cursor-pointer"
             >
-              {selectedFile ? selectedFile.name : "Upload Photo"}
+              {selectedFile ? selectedFile : "Upload Photo"}
             </label>
           </div>
         </div>

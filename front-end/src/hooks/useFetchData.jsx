@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { token } from "../config";
 const useFetchData = (url) => {
   const [data, setData] = useState([]);
-  console.log("🚀 ~ useFetchData ~ data:", data)
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   useEffect(() => {

@@ -5,6 +5,7 @@ import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
 const Profile = ({ doctorData }) => {
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,6 +21,7 @@ const Profile = ({ doctorData }) => {
     about: "",
     photo: null,
   });
+  
   useEffect(() => {
     setFormData({
       name: doctorData?.name,
@@ -42,7 +44,6 @@ const Profile = ({ doctorData }) => {
   const handlefileInputChange = async (e) => {
     const file = e.target.files[0];
     const data = await uploadImageToCloudinary(file);
-    console.log(data);
     setFormData({ ...formData, photo: data?.url });
   };
   const updateProfileHandler = async (e) => {
