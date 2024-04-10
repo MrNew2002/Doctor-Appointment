@@ -26,32 +26,33 @@ const Home = () => {
       <section className="hero__section pt-[60px] 2xl:h-[800px]">
         <div className="container">
           <div className="flex flex-col lg:flex-row gap-[90px] items-center justify-between">
+           <div>
             <div className="lg:w-[570px]"> 
-              <h1 className="text-[36px] md:text-[36px] leading-[36px] md:leading-[70px] text-headingColor font-[800]">
-                ...
-              </h1>
-              <h1 className="text__para">haha</h1>
-              <button className="btn">Request an Appointment</button>
+                <h1 className="text-[36px] md:text-[36px] leading-[36px] md:leading-[70px] text-headingColor font-[800]">
+                  We help patients live a healthy, long life.
+                </h1>
+                <button className="btn">Request an Appointment</button>
 
-              <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5
-              lg:gap-[30px]">
+                <div className="mt-[30px] lg:mt-[70px] flex flex-col lg:flex-row lg:items-center gap-5
+                lg:gap-[30px]">
+                  <div> 
+                    <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">30+</h2>
+                    <span className="w-[100px] h-2 bg-yellowColor round-full block mt-[-14px]"></span> 
+                    <p className="text__para">Years of Experience</p>
+                </div>
                 <div> 
-                  <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">30+</h2>
-                  <span className="w-[100px] h-2 bg-yellowColor round-full block mt-[-14px]"></span> 
-                  <p className="text__para">Years of Experience</p>
+                  <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">15+</h2>
+                  <span className="w-[100px] h-2 bg-purpleColor round-full block mt-[-14px]"></span> 
+                  <p className="text__para">Clinic Location</p>
+                </div>
+                <div> 
+                  <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">100%</h2>
+                  <span className="w-[100px] h-2 bg-irisBlueColor round-full block mt-[-14px]"></span> 
+                  <p className="text__para">Patient Satisfaction</p>
+                </div>
               </div>
-              <div> 
-                <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">15+</h2>
-                <span className="w-[100px] h-2 bg-purpleColor round-full block mt-[-14px]"></span> 
-                <p className="text__para">Clinic Location</p>
-              </div>
-              <div> 
-                <h2 className="text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor">100%</h2>
-                <span className="w-[100px] h-2 bg-irisBlueColor round-full block mt-[-14px]"></span> 
-                <p className="text__para">Patient Satisfaction</p>
-              </div>
-            </div>
           </div>
+           </div>
           <div className="flex gap-[30px] justify-end"> 
               <div className="w-[60%]"> 
                 <img className="w-full" src={heroImg01} alt="" />
@@ -73,7 +74,7 @@ const Home = () => {
               Providing the best mecial services
             </h2>
             <h2 className="text__para text-center">
-              ...
+              World-class care for everyone. Out health System offers unmatched, expert health care.
             </h2>
           </div>
 
@@ -85,9 +86,9 @@ const Home = () => {
                 <img src={icon01} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700]">Find a Doctor</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Doctor</h2>
               <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">
-                ...
+                World-class care for everyone. Out health System offers unmatched, expert health care. From the lab to the clinic.
               </p>
 
               <Link to='/doctors' className="w-[44px] rounded-full border border-solid border-[#181A1E] 
@@ -102,9 +103,9 @@ const Home = () => {
                 <img src={icon02} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700]">Find a Location</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Find a Location</h2>
               <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">
-                ...
+                World-class care for everyone. Out health System offers unmatched, expert health care. From the lab to the clinic.
               </p>
 
               <Link to='/doctors' className="w-[44px] rounded-full border border-solid border-[#181A1E] 
@@ -119,9 +120,9 @@ const Home = () => {
                 <img src={icon03} alt="" />
               </div>
               <div className="mt-[30px]">
-                <h2 className="text-[26px] leading-9 text-headingColor font-[700]">Book Appointment</h2>
+                <h2 className="text-[26px] leading-9 text-headingColor font-[700] text-center">Book Appointment</h2>
               <p className="text-[16px] leading-7 text-textColor font-[400] mt-4 text-center">
-                ...
+                World-class care for everyone. Out health System offers unmatched, expert health care. From the lab to the clinic.
               </p>
 
               <Link to='/doctors' className="w-[44px] rounded-full border border-solid border-[#181A1E] 
@@ -141,7 +142,7 @@ const Home = () => {
         <div className="container">
           <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">Our medical services</h2>
-            <p className="text__para text_center">...</p>
+
           </div>
           <ServiceList/>
         </div>
@@ -157,23 +158,20 @@ const Home = () => {
 
               <ul className="pl-4">
                 <li className="text__para">
-                  1.
+                  1. Schedule the appointment directly.
                 </li>
                 <li className="text__para">
-                  2.
+                  2. Search for your physician here, and contact thier office.
                 </li>
                 <li className="text__para">
-                  3.
-                </li>
-                <li className="text__para">
-                  4.
+                  3. View out physicians who are accepting new patients, use the online scheduling tool to select an appointment time.
                 </li>
               </ul>
               <Link to="/">
                 <button className="btn">Learn more</button>
               </Link>
             </div>
-            <div className="relative z-10 xl:w-[770px] flex justify-end mt-[50px] lg:mt-0">
+            <div className="relative z-10 xl:w-[570px] flex justify-end mt-[50px] lg:mt-0">
               <img src={featureImg} className="w-3/4" alt="" />
 
               <div className="w-150px] lg:w-[248px] bg-white absolute bottom-[50px] left-0 md:bottom-
@@ -214,7 +212,6 @@ const Home = () => {
         <div className="container">
         <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">Our medical services</h2>
-            <p className="text__para text_center">...</p>
           </div>
           <DoctorList />
         </div>
@@ -228,7 +225,7 @@ const Home = () => {
             </div>
 
             <div className='w-full md:w-1/2'>
-              <h2 className='heading'>....</h2>
+              <h2 className='heading'>Most questions by our beloved patients</h2>
 
               <Faqlist />
             </div>
@@ -240,7 +237,7 @@ const Home = () => {
         <div className="container">
         <div className="xl:w-[470px] mx-auto">
             <h2 className="heading text-center">What our patient say</h2>
-            <p className="text__para text_center">...</p>
+            <p className="text__para text_center">World-class care for everyone. Out health System offers unmatched, expert health care.</p>
           </div>
 
           <Testimonial />

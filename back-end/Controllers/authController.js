@@ -13,7 +13,6 @@ const generateToken = (user) => {
 };
 export const register = async (req, res) => {
   const { email, password, name, role, photo, gender } = req.body;
-  console.log("🚀 ~ register ~ req.body:", req.body);
   try {
     let user = null;
     if (role === "patient") {
@@ -83,7 +82,7 @@ export const login = async (req, res) => {
     if (!isPasswordMatch) {
       return res
         .status(400)
-        .json({ status: false, message: "Internal credentials" });
+        .json({ status: false, message: "Password not match" });
     }
     const token = generateToken(user);
     const { password, role, appoinments, ...rests } = user._doc;

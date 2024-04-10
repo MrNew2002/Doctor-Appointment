@@ -36,7 +36,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                     <h4 className='text-[18px] leanding-[30px] font-semibold text-headingColor'>
-                            ...
+                        Saleh Mahmud
 
                         </h4>
                         <div className='flex items-center gap-[2px]'>
@@ -48,7 +48,8 @@ const Testimonial = () => {
                         </div>
                     </div>
                 </div> 
-                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>...</p>
+                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>"I have taken medical services from them.
+                They treat so well and they are providing the best medical services."</p>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='py-[30px] px-5 rounded-3'>
@@ -57,7 +58,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                     <h4 className='text-[18px] leanding-[30px] font-semibold text-headingColor'>
-                            ...
+                            Nguyen Ngoc Tan
 
                         </h4>
                         <div className='flex items-center gap-[2px]'>
@@ -69,7 +70,8 @@ const Testimonial = () => {
                         </div>
                     </div>
                 </div> 
-                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>...</p>
+                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>"I have taken medical services from them.
+                They treat so well and they are providing the best medical services."</p>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='py-[30px] px-5 rounded-3'>
@@ -78,7 +80,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                     <h4 className='text-[18px] leanding-[30px] font-semibold text-headingColor'>
-                            ...
+                            Nguyen Loc
 
                         </h4>
                         <div className='flex items-center gap-[2px]'>
@@ -90,7 +92,8 @@ const Testimonial = () => {
                         </div>
                     </div>
                 </div> 
-                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>...</p>
+                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>"I have taken medical services from them.
+                They treat so well and they are providing the best medical services."</p>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='py-[30px] px-5 rounded-3'>
@@ -99,7 +102,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                     <h4 className='text-[18px] leanding-[30px] font-semibold text-headingColor'>
-                            ...
+                            Yen Nhi
 
                         </h4>
                         <div className='flex items-center gap-[2px]'>
@@ -111,7 +114,8 @@ const Testimonial = () => {
                         </div>
                     </div>
                 </div> 
-                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>...</p>
+                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>"I have taken medical services from them.
+                They treat so well and they are providing the best medical services."</p>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='py-[30px] px-5 rounded-3'>
@@ -120,7 +124,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                     <h4 className='text-[18px] leanding-[30px] font-semibold text-headingColor'>
-                            ...
+                            My Han
 
                         </h4>
                         <div className='flex items-center gap-[2px]'>
@@ -132,7 +136,8 @@ const Testimonial = () => {
                         </div>
                     </div>
                 </div> 
-                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>...</p>
+                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>"I have taken medical services from them.
+                They treat so well and they are providing the best medical services."</p>
             </SwiperSlide>
             <SwiperSlide>
                 <div className='py-[30px] px-5 rounded-3'>
@@ -141,7 +146,7 @@ const Testimonial = () => {
                     </div>
                     <div>
                     <h4 className='text-[18px] leanding-[30px] font-semibold text-headingColor'>
-                            ...
+                            Thanh Thu
                         </h4>
                         <div className='flex items-center gap-[2px]'>
                             <HiStar className='text-yellowColor w-[18px] h-5' />
@@ -152,7 +157,8 @@ const Testimonial = () => {
                         </div>
                     </div>
                 </div> 
-                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>...</p>
+                <p className='text-[16px] leading-7 mt-4 text-textColor font-[400]'>"I have taken medical services from them.
+                They treat so well and they are providing the best medical services."</p>
             </SwiperSlide>
 
         </Swiper>

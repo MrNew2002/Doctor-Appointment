@@ -52,8 +52,8 @@ body{
     box-shadow: 3px 3px -8px 3px #ddd;
 }
 
-@media only screen and(max-width:768px){
-    .navigation{
+@media only screen and (max-width: 768px) {
+    .navigation {
         width: 100%;
         height: 100%;
         position: fixed;
@@ -64,10 +64,10 @@ body{
         display: none;
     }
 
-    .menu{
+    .menu {
         width: 15rem;
         height: 100%;
-        position:absolute;
+        position: absolute;
         top: 0;
         right: 0;
         background: #fff;
@@ -76,9 +76,10 @@ body{
         justify-content: center;
         align-items: center;
         line-height: 30px;
+        display: none; /* Đảm bảo menu ẩn đi khi không được kích hoạt */
     }
 
-    .show__menu{
-        display: block;
+    .show__menu {
+        display: block; /* Hiển thị menu khi được kích hoạt */
     }
 }
