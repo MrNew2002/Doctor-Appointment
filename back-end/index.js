@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 const corsOptions = {
-  origin: true,
+  origin: true,   
 };
 app.get("/", (reg, res) => {
   res.send("api is working");
