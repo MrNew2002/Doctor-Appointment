@@ -96,6 +96,7 @@ export const getMyAppointments = async (req, res) => {
     const bookings = await Booking.find({ user: req.userId });
 
     const doctorIds = bookings.map((el) => el.doctor.id);
+    console.log("🚀 ~ getMyAppointments ~ doctorIds:", doctorIds)
     
 
     const doctors = await Doctor.find({ _id: { $in: doctorIds } }).select(
@@ -104,7 +105,7 @@ export const getMyAppointments = async (req, res) => {
     res.status(200).json({
       success: true,
       message: "Appointments are getting",
-      data: doctors,
+      data: bookings,
     });
   } catch (error) {
     res.status(500).json({

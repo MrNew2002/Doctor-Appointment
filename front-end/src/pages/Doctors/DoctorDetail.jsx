@@ -11,6 +11,7 @@ import Error from "../../compoments/Error/Error.jsx";
 import { useParams } from "react-router-dom";
 import convertTime from "../../utils/convertTime.js";
 import moment from "moment";
+import Calendar from "../../compoments/Calendar/Calendar.jsx";
 const DoctorDetail = () => {
   const [tab, setTab] = useState("about");
   const { id } = useParams();
@@ -172,6 +173,7 @@ const DoctorDetail = () => {
                 ticketPrice={ticketPrice}
                 timeSlots={formData}
               />
+              <Calendar timeSlots={formData} doctorName={doctor.name} />
             </div>
           </div>
         )}

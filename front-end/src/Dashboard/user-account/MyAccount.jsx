@@ -7,6 +7,7 @@ import useGetProfile from "../../hooks/useFetchData.jsx";
 import { BASE_URL } from "../../config.js";
 import Loading from "../../compoments/Loader/Loading.jsx";
 import Error from "../../compoments/Error/Error.jsx";
+import Calendar from "./Calendar.jsx";
 const MyAccount = () => {
   const { dispatch } = useContext(authContext);
   const [tab, setTab] = useState("bookings");
@@ -82,7 +83,7 @@ const MyAccount = () => {
                   Profile setting
                 </button>
               </div>
-              {tab == "bookings" && <MyBookings />}
+              {tab == "bookings" && <Calendar />}
               {tab == "settings" && <Profile userData={userData} />}
             </div>
           </div>
