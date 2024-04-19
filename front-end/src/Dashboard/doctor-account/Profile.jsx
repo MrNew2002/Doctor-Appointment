@@ -5,7 +5,6 @@ import uploadImageToCloudinary from "../../utils/uploadCloudinary";
 import { BASE_URL, token } from "../../config";
 import { toast } from "react-toastify";
 const Profile = ({ doctorData }) => {
-  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -20,10 +19,12 @@ const Profile = ({ doctorData }) => {
     timeSlots: [],
     about: "",
     photo: null,
+    isApproved: "approved",
   });
-  
+
   useEffect(() => {
-    setFormData({
+    setFormData((prevState) => ({
+      ...prevState,
       name: doctorData?.name,
       email: doctorData?.email,
       phone: doctorData?.phone,
@@ -36,7 +37,7 @@ const Profile = ({ doctorData }) => {
       timeSlots: doctorData?.timeSlots,
       about: doctorData?.about,
       photo: doctorData?.photo,
-    });
+    }));
   }, [doctorData]);
   const handleInputOnChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

@@ -19,11 +19,13 @@ const Calendar = () => {
     //alert(e.event);
   };
   const calendarRef = useRef(null);
+  const approvedAppointments = appointments.filter(
+    (appointment) => appointment.status === "approved"
+  );
   const generateEvents = () => {
     // Logic để tạo sự kiện tự động ở đây
     const events = [];
-    console.log("🚀 ~ generateEvents ~ events:", events);
-    appointments?.map((item) => {
+    approvedAppointments?.map((item) => {
       events.push({
         title: `Meeting ${item.doctor.name}`,
         date: `${item.date}`,

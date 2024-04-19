@@ -8,6 +8,7 @@ import userRouter from "./Routes/user.js";
 import doctorRouter from "./Routes/doctor.js";
 import reviewRouter from "./Routes/review.js";
 import bookingRouter from "./Routes/booking.js";
+import contactRouter from "./Routes/contact.js";
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
@@ -35,6 +36,7 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/doctors", doctorRouter);
 app.use("/api/v1/reviews", reviewRouter);
 app.use("/api/v1/bookings", bookingRouter);
+app.use("/api/v1/contacts", contactRouter);
 app.listen(port, () => {
   connectdb();
   console.log("listening on port: " + port);

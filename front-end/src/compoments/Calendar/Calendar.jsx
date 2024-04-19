@@ -8,7 +8,6 @@ import {
 import moment from "moment";
 import convertTime from "../../utils/convertTime";
 function Calendar({ timeSlots, doctorName }) {
-  console.log("🚀 ~ Calendar ~ timeSlots:", timeSlots);
   const eventName = `Medical appointment with Dr. ${doctorName} `;
 
   const [eventDescription, setEventDescription] = useState("");
@@ -44,7 +43,7 @@ function Calendar({ timeSlots, doctorName }) {
       description: eventDescription,
       start: {
         dateTime: moment(
-          timeSlots.date + " " + timeSlots.time.endingTime
+          timeSlots.date + " " + timeSlots.time.startingTime
         ).toISOString(), // Date.toISOString() ->
         timeZone: Intl.DateTimeFormat().resolvedOptions().timeZone, // America/Los_Angeles
       },
