@@ -12,9 +12,6 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 8000;
 
-const corsOptions = {
-  origin: true,
-};
 app.get("/", (reg, res) => {
   res.send("api is working");
 });
@@ -32,7 +29,7 @@ const connectdb = async () => {
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use("/api/v1/auth", authRouter); //domain/api/v1/auth
 app.use("/api/v1/users", userRouter);
 app.use("/api/v1/doctors", doctorRouter);
